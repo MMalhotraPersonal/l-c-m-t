@@ -1,6 +1,7 @@
 include: "//a1lk_project_agilone_base/customersummary.view.lkml"
+view: c_customersummary {
+  extends: [customersummary]
 
-view: +customersummary {
   dimension: c_geohierarchy_area {
     type: string
     sql: ${TABLE}.c_customerarea ;;
@@ -34,6 +35,25 @@ view: +customersummary {
     sql: ${TABLE}.c_customercountry ;;
     label: "Geohierarchy - Country"
     group_label: "Geohierarchy"
+  }
+
+  dimension_group: c_sweat_collective_created_date {
+    type: time
+    timeframes: [
+      raw,
+      date,
+      day_of_week,
+      day_of_month,
+      week_of_year,
+      month,
+      month_name,
+      quarter,
+      quarter_of_year,
+      year
+    ]
+    sql: ${TABLE}.c_SC_createdDate ;;
+    datatype: timestamp
+    label: "Sweat Collective Created"
   }
 
   dimension: c_sweat_collective_athlete_type {
@@ -148,6 +168,44 @@ view: +customersummary {
     group_label: "Marketing Status & Preferences"
   }
 
+  dimension_group: c_registration_date {
+    type: time
+    timeframes: [
+      raw,
+      date,
+      day_of_week,
+      day_of_month,
+      week_of_year,
+      month,
+      month_name,
+      quarter,
+      quarter_of_year,
+      year
+    ]
+    sql: ${TABLE}.c_registrationdate ;;
+    datatype: timestamp
+    label: "Registration"
+  }
+
+  dimension_group: c_store_signup_date {
+    type: time
+    timeframes: [
+      raw,
+      date,
+      day_of_week,
+      day_of_month,
+      week_of_year,
+      month,
+      month_name,
+      quarter,
+      quarter_of_year,
+      year
+    ]
+    sql: ${TABLE}.c_storesignupdate ;;
+    datatype: timestamp
+    label: "Store Signup"
+  }
+
   dimension: c_lulu_lapsed_subsegment_30_days_ago {
     type: string
     sql: ${TABLE}.c_lapsedSubSegment30Days ;;
@@ -232,6 +290,25 @@ view: +customersummary {
     group_label: "Lulu Segments/Models"
   }
 
+  dimension_group: c_nps_last_response_date {
+    type: time
+    timeframes: [
+      raw,
+      date,
+      day_of_week,
+      day_of_month,
+      week_of_year,
+      month,
+      month_name,
+      quarter,
+      quarter_of_year,
+      year
+    ]
+    sql: ${TABLE}.c_NPS_ResponseDate ;;
+    datatype: timestamp
+    label: "NPS Last Response"
+  }
+
   dimension: c_nps_last_score {
     type: number
     sql: ${TABLE}.c_NPS_Score ;;
@@ -276,86 +353,6 @@ view: +customersummary {
     description: "Region where a guest is a Loyalty member"
   }
 
-  dimension: likelihood_to_buy_today {
-    hidden: no
-  }
-
-  dimension_group: c_sweat_collective_created_date {
-    type: time
-    timeframes: [
-      raw,
-      date,
-      day_of_week,
-      day_of_month,
-      week_of_year,
-      month,
-      month_name,
-      quarter,
-      quarter_of_year,
-      year,
-    ]
-    sql: ${TABLE}.c_SC_createdDate ;;
-    datatype: timestamp
-    label: "Sweat Collective Created"
-  }
-
-  dimension_group: c_registration_date {
-    type: time
-    timeframes: [
-      raw,
-      date,
-      day_of_week,
-      day_of_month,
-      week_of_year,
-      month,
-      month_name,
-      quarter,
-      quarter_of_year,
-      year,
-    ]
-    sql: ${TABLE}.c_registrationdate ;;
-    datatype: timestamp
-    label: "Registration"
-  }
-
-  dimension_group: c_store_signup_date {
-    type: time
-    timeframes: [
-      raw,
-      date,
-      day_of_week,
-      day_of_month,
-      week_of_year,
-      month,
-      month_name,
-      quarter,
-      quarter_of_year,
-      year,
-    ]
-    sql: ${TABLE}.c_storesignupdate ;;
-    datatype: timestamp
-    label: "Store Signup"
-  }
-
-  dimension_group: c_nps_last_response_date {
-    type: time
-    timeframes: [
-      raw,
-      date,
-      day_of_week,
-      day_of_month,
-      week_of_year,
-      month,
-      month_name,
-      quarter,
-      quarter_of_year,
-      year,
-    ]
-    sql: ${TABLE}.c_NPS_ResponseDate ;;
-    datatype: timestamp
-    label: "NPS Last Response"
-  }
-
   dimension_group: c_loyalty_start_date {
     type: time
     timeframes: [
@@ -368,7 +365,7 @@ view: +customersummary {
       month_name,
       quarter,
       quarter_of_year,
-      year,
+      year
     ]
     sql: ${TABLE}.c_loyaltyStartDate ;;
     datatype: timestamp
@@ -388,12 +385,16 @@ view: +customersummary {
       month_name,
       quarter,
       quarter_of_year,
-      year,
+      year
     ]
     sql: ${TABLE}.c_loyaltyEndDate ;;
     datatype: timestamp
     label: "Loyalty End"
     description: "The date a guest's Loyalty membership ended"
+  }
+
+  dimension: likelihood_to_buy_today {
+    hidden: no
   }
 
   dimension_group: c_effective_start_date {
@@ -408,7 +409,7 @@ view: +customersummary {
       month_name,
       quarter,
       quarter_of_year,
-      year,
+      year
     ]
     sql: ${TABLE}.c_effectiveStartDate ;;
     datatype: timestamp
@@ -428,11 +429,12 @@ view: +customersummary {
       month_name,
       quarter,
       quarter_of_year,
-      year,
+      year
     ]
     sql: ${TABLE}.c_effectiveEndDate ;;
     datatype: timestamp
     label: "Employee Effective End"
     description: "The effective end date of the employee"
   }
+
 }
