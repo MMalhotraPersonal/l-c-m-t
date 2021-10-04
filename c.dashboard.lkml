@@ -8,12 +8,12 @@
     explore: standard_model
     type: looker_line
     fields: [c_transactionsummary.buyer_count, c_customersummary.last_transaction_interval,
-      c_cohort.campaign_segment_name]
-    pivots: [c_cohort.campaign_segment_name]
+      cohort.campaign_segment_name]
+    pivots: [cohort.campaign_segment_name]
     filters:
       c_customersummary.last_transaction_interval: "-One Time Buyer,-Non Buyer,-NA\
         \ - High Volume Buyer - 10k+ transactions,-Unidentified"
-    sorts: [c_customersummary.last_transaction_interval, c_cohort.campaign_segment_name]
+    sorts: [c_customersummary.last_transaction_interval, cohort.campaign_segment_name]
     limit: 500
     color_application:
       collection_id: c135b719-9ca1-418a-9ad9-ce7f356b8f18
@@ -53,9 +53,9 @@
     show_totals_labels: false
     show_silhouette: false
     listen:
-      Cohort | Campaign Name: c_cohort.campaign_name
-      Cohort | Segment Name: c_cohort.segment_name
-      Cohort | Execution Date: c_cohort.execution_date_date
+      Cohort | Campaign Name: cohort.campaign_name
+      Cohort | Segment Name: cohort.segment_name
+      Cohort | Execution Date: cohort.execution_date_date
     row: 93
     col: 0
     width: 13
@@ -66,7 +66,7 @@
     explore: standard_model
     type: looker_column
     fields: [c_transactionsummary.aov, c_transactionsummary.revenue_per_customer,
-      c_cohort.campaign_segment_name]
+      cohort.campaign_segment_name]
     sorts: [c_transactionsummary.aov desc]
     limit: 500
     x_axis_gridlines: false
@@ -99,9 +99,9 @@
     show_totals_labels: false
     show_silhouette: false
     listen:
-      Cohort | Campaign Name: c_cohort.campaign_name
-      Cohort | Segment Name: c_cohort.segment_name
-      Cohort | Execution Date: c_cohort.execution_date_date
+      Cohort | Campaign Name: cohort.campaign_name
+      Cohort | Segment Name: cohort.segment_name
+      Cohort | Execution Date: cohort.execution_date_date
     row: 7
     col: 0
     width: 13
@@ -112,7 +112,7 @@
     explore: standard_model
     type: looker_column
     fields: [c_transactionsummary.buyer_count, c_productcategorysummary_customersummary_lasttransaction.level1,
-      c_cohort.campaign_segment_name]
+      cohort.campaign_segment_name]
     pivots: [c_productcategorysummary_customersummary_lasttransaction.level1]
     filters:
       c_productcategorysummary_customersummary_lasttransaction.level1: "-NULL"
@@ -153,9 +153,9 @@
     show_totals_labels: false
     show_silhouette: false
     listen:
-      Cohort | Campaign Name: c_cohort.campaign_name
-      Cohort | Segment Name: c_cohort.segment_name
-      Cohort | Execution Date: c_cohort.execution_date_date
+      Cohort | Campaign Name: cohort.campaign_name
+      Cohort | Segment Name: cohort.segment_name
+      Cohort | Execution Date: cohort.execution_date_date
     row: 114
     col: 12
     width: 12
@@ -165,7 +165,7 @@
 
     explore: standard_model
     type: looker_column
-    fields: [c_transactionsummary.buyer_count, c_productcategorysummary.level1, c_cohort.campaign_segment_name]
+    fields: [c_transactionsummary.buyer_count, c_productcategorysummary.level1, cohort.campaign_segment_name]
     pivots: [c_productcategorysummary.level1]
     filters:
       c_productcategorysummary.level1: "-NULL"
@@ -207,9 +207,9 @@
     show_totals_labels: false
     show_silhouette: false
     listen:
-      Cohort | Campaign Name: c_cohort.campaign_name
-      Cohort | Segment Name: c_cohort.segment_name
-      Cohort | Execution Date: c_cohort.execution_date_date
+      Cohort | Campaign Name: cohort.campaign_name
+      Cohort | Segment Name: cohort.segment_name
+      Cohort | Execution Date: cohort.execution_date_date
     row: 114
     col: 0
     width: 12
@@ -219,7 +219,7 @@
 
     explore: standard_model
     type: sankey
-    fields: [c_cohort.campaign_segment_name, c_organizationsummary.state, c_transactionsummary.buyer_count]
+    fields: [cohort.campaign_segment_name, c_organizationsummary.state, c_transactionsummary.buyer_count]
     filters:
       c_organizationsummary.state: "-NULL"
     sorts: [c_transactionsummary.buyer_count desc]
@@ -228,9 +228,9 @@
     show_null_points: true
     series_types: {}
     listen:
-      Cohort | Campaign Name: c_cohort.campaign_name
-      Cohort | Segment Name: c_cohort.segment_name
-      Cohort | Execution Date: c_cohort.execution_date_date
+      Cohort | Campaign Name: cohort.campaign_name
+      Cohort | Segment Name: cohort.segment_name
+      Cohort | Execution Date: cohort.execution_date_date
     row: 127
     col: 0
     width: 24
@@ -241,12 +241,12 @@
     explore: standard_model
     type: looker_column
     fields: [c_transactionsummary.buyer_count, c_customersummary.transaction_count_lifetime,
-      c_cohort.campaign_segment_name]
-    pivots: [c_cohort.campaign_segment_name]
+      cohort.campaign_segment_name]
+    pivots: [cohort.campaign_segment_name]
     filters:
       c_customersummary.transaction_count_lifetime: "-0,-NA - High Volume Buyer -\
         \ 10k+ transactions,-Unidentified"
-    sorts: [c_customersummary.transaction_count_lifetime, c_cohort.campaign_segment_name]
+    sorts: [c_customersummary.transaction_count_lifetime, cohort.campaign_segment_name]
     limit: 500
     color_application:
       collection_id: c135b719-9ca1-418a-9ad9-ce7f356b8f18
@@ -284,9 +284,9 @@
     show_totals_labels: false
     show_silhouette: false
     listen:
-      Cohort | Campaign Name: c_cohort.campaign_name
-      Cohort | Segment Name: c_cohort.segment_name
-      Cohort | Execution Date: c_cohort.execution_date_date
+      Cohort | Campaign Name: cohort.campaign_name
+      Cohort | Segment Name: cohort.segment_name
+      Cohort | Execution Date: cohort.execution_date_date
     row: 17
     col: 0
     width: 13
@@ -297,7 +297,7 @@
     explore: standard_model
     type: looker_donut_multiples
     fields: [c_customersummary.all_individuals_count, c_customersummary.category_count,
-      c_cohort.campaign_segment_name]
+      cohort.campaign_segment_name]
     pivots: [c_customersummary.category_count]
     filters:
       c_customersummary.category_count: "-NA - High Volume Buyer - 10k+ transactions,-Unidentified,-0,-Non\
@@ -337,9 +337,9 @@
     show_totals_labels: false
     show_silhouette: false
     listen:
-      Cohort | Campaign Name: c_cohort.campaign_name
-      Cohort | Segment Name: c_cohort.segment_name
-      Cohort | Execution Date: c_cohort.execution_date_date
+      Cohort | Campaign Name: cohort.campaign_name
+      Cohort | Segment Name: cohort.segment_name
+      Cohort | Execution Date: cohort.execution_date_date
     row: 101
     col: 0
     width: 24
@@ -349,7 +349,7 @@
 
     explore: standard_model
     type: looker_donut_multiples
-    fields: [c_cohort.campaign_segment_name, c_transactionsummary.buyer_count, c_customersummary.gender]
+    fields: [cohort.campaign_segment_name, c_transactionsummary.buyer_count, c_customersummary.gender]
     pivots: [c_customersummary.gender]
     filters:
       c_customersummary.gender: "-Unidentified,-Unknown,-Neutral"
@@ -366,9 +366,9 @@
         steps: 5
     series_types: {}
     listen:
-      Cohort | Campaign Name: c_cohort.campaign_name
-      Cohort | Segment Name: c_cohort.segment_name
-      Cohort | Execution Date: c_cohort.execution_date_date
+      Cohort | Campaign Name: cohort.campaign_name
+      Cohort | Segment Name: cohort.segment_name
+      Cohort | Execution Date: cohort.execution_date_date
     row: 7
     col: 13
     width: 11
@@ -402,12 +402,12 @@
     explore: standard_model
     type: looker_area
     fields: [c_transactionsummary.transaction_date_month, c_transactionsummary.total_revenue,
-      c_transactionsummary.buyer_count, c_cohort.campaign_segment_name]
-    pivots: [c_cohort.campaign_segment_name]
+      c_transactionsummary.buyer_count, cohort.campaign_segment_name]
+    pivots: [cohort.campaign_segment_name]
     fill_fields: [c_transactionsummary.transaction_date_month]
     filters:
       c_transactionsummary.transaction_date_month: 24 months ago for 24 months
-    sorts: [c_transactionsummary.transaction_date_month, c_cohort.campaign_segment_name]
+    sorts: [c_transactionsummary.transaction_date_month, cohort.campaign_segment_name]
     limit: 500
     column_limit: 50
     x_axis_gridlines: false
@@ -447,9 +447,9 @@
     ordering: none
     show_null_labels: false
     listen:
-      Cohort | Campaign Name: c_cohort.campaign_name
-      Cohort | Segment Name: c_cohort.segment_name
-      Cohort | Execution Date: c_cohort.execution_date_date
+      Cohort | Campaign Name: cohort.campaign_name
+      Cohort | Segment Name: cohort.segment_name
+      Cohort | Execution Date: cohort.execution_date_date
     row: 47
     col: 0
     width: 24
@@ -512,9 +512,9 @@
     show_null_points: true
     interpolation: linear
     listen:
-      Cohort | Campaign Name: c_cohort.campaign_name
-      Cohort | Segment Name: c_cohort.segment_name
-      Cohort | Execution Date: c_cohort.execution_date_date
+      Cohort | Campaign Name: cohort.campaign_name
+      Cohort | Segment Name: cohort.segment_name
+      Cohort | Execution Date: cohort.execution_date_date
     row: 81
     col: 13
     width: 11
@@ -525,7 +525,7 @@
     explore: standard_model
     type: looker_donut_multiples
     fields: [c_transactionsummary.buyer_count, c_customersummary.sales_channel_count,
-      c_cohort.campaign_segment_name]
+      cohort.campaign_segment_name]
     pivots: [c_customersummary.sales_channel_count]
     filters:
       c_customersummary.sales_channel_count: '1,2'
@@ -568,9 +568,9 @@
     show_silhouette: false
     show_null_points: true
     listen:
-      Cohort | Campaign Name: c_cohort.campaign_name
-      Cohort | Segment Name: c_cohort.segment_name
-      Cohort | Execution Date: c_cohort.execution_date_date
+      Cohort | Campaign Name: cohort.campaign_name
+      Cohort | Segment Name: cohort.segment_name
+      Cohort | Execution Date: cohort.execution_date_date
     row: 93
     col: 13
     width: 11
@@ -581,7 +581,7 @@
     explore: standard_model
     type: looker_column
     fields: [c_customersummary.days_since_last_transaction_group, c_transactionsummary.buyer_count,
-      c_cohort.campaign_segment_name]
+      cohort.campaign_segment_name]
     pivots: [c_customersummary.days_since_last_transaction_group]
     filters:
       c_customersummary.days_since_last_transaction_group: "-NA - High Volume Buyer\
@@ -617,9 +617,9 @@
     show_totals_labels: false
     show_silhouette: false
     listen:
-      Cohort | Campaign Name: c_cohort.campaign_name
-      Cohort | Segment Name: c_cohort.segment_name
-      Cohort | Execution Date: c_cohort.execution_date_date
+      Cohort | Campaign Name: cohort.campaign_name
+      Cohort | Segment Name: cohort.segment_name
+      Cohort | Execution Date: cohort.execution_date_date
     row: 81
     col: 0
     width: 13
@@ -629,14 +629,14 @@
 
     explore: standard_model
     type: looker_column
-    fields: [c_customersummary.revenue_segment_last_12_months, c_cohort.campaign_segment_name,
+    fields: [c_customersummary.revenue_segment_last_12_months, cohort.campaign_segment_name,
       c_transactionsummary.buyer_count]
     pivots: [c_customersummary.revenue_segment_last_12_months]
     filters:
       c_customersummary.revenue_segment_last_12_months: "-NA - High Volume Buyer -\
         \ 10k+ transactions,-Unidentified"
       c_transactionsummary.transaction_date_date: 12 months
-    sorts: [c_customersummary.revenue_segment_last_12_months, c_cohort.campaign_segment_name]
+    sorts: [c_customersummary.revenue_segment_last_12_months, cohort.campaign_segment_name]
     limit: 500
     column_limit: 50
     total: true
@@ -694,9 +694,9 @@
     show_silhouette: false
     hidden_fields: [non_buyers_in_the_last_12_months]
     listen:
-      Cohort | Campaign Name: c_cohort.campaign_name
-      Cohort | Segment Name: c_cohort.segment_name
-      Cohort | Execution Date: c_cohort.execution_date_date
+      Cohort | Campaign Name: cohort.campaign_name
+      Cohort | Segment Name: cohort.segment_name
+      Cohort | Execution Date: cohort.execution_date_date
     row: 17
     col: 13
     width: 11
@@ -707,7 +707,7 @@
     explore: standard_model
     type: single_value
     fields: [c_transactionsummary.total_revenue, c_transactionsummary.transaction_date_year,
-      c_cohort.campaign_segment_name, c_transactionsummary.revenue_per_customer]
+      cohort.campaign_segment_name, c_transactionsummary.revenue_per_customer]
     pivots: [c_transactionsummary.transaction_date_year]
     fill_fields: [c_transactionsummary.transaction_date_year]
     filters:
@@ -731,13 +731,13 @@
     comparison_type: change
     comparison_reverse_colors: false
     show_comparison_label: false
-    hidden_fields: [c_cohort.campaign_segment_name, c_transactionsummary.revenue_per_customer]
+    hidden_fields: [cohort.campaign_segment_name, c_transactionsummary.revenue_per_customer]
     series_types: {}
     hidden_points_if_no: [segment_1]
     listen:
-      Cohort | Campaign Name: c_cohort.campaign_name
-      Cohort | Segment Name: c_cohort.segment_name
-      Cohort | Execution Date: c_cohort.execution_date_date
+      Cohort | Campaign Name: cohort.campaign_name
+      Cohort | Segment Name: cohort.segment_name
+      Cohort | Execution Date: cohort.execution_date_date
     row: 35
     col: 16
     width: 4
@@ -748,7 +748,7 @@
     explore: standard_model
     type: looker_column
     fields: [c_customersummary.revenue_trend_segment, c_transactionsummary.buyer_count,
-      c_cohort.campaign_segment_name]
+      cohort.campaign_segment_name]
     pivots: [c_customersummary.revenue_trend_segment]
     filters:
       c_customersummary.revenue_trend_segment: "-Non Buyer,-NA - High Volume Buyer\
@@ -788,9 +788,9 @@
     show_totals_labels: false
     show_silhouette: false
     listen:
-      Cohort | Campaign Name: c_cohort.campaign_name
-      Cohort | Segment Name: c_cohort.segment_name
-      Cohort | Execution Date: c_cohort.execution_date_date
+      Cohort | Campaign Name: cohort.campaign_name
+      Cohort | Segment Name: cohort.segment_name
+      Cohort | Execution Date: cohort.execution_date_date
     row: 63
     col: 0
     width: 24
@@ -800,7 +800,7 @@
 
     explore: standard_model
     type: single_value
-    fields: [c_cohort.campaign_segment_name, c_transactionsummary.total_revenue, c_transactionsummary.revenue_per_customer,
+    fields: [cohort.campaign_segment_name, c_transactionsummary.total_revenue, c_transactionsummary.revenue_per_customer,
       c_transactionsummary.transaction_date_year]
     pivots: [c_transactionsummary.transaction_date_year]
     fill_fields: [c_transactionsummary.transaction_date_year]
@@ -825,13 +825,13 @@
     comparison_type: change
     comparison_reverse_colors: false
     show_comparison_label: false
-    hidden_fields: [c_cohort.campaign_segment_name]
+    hidden_fields: [cohort.campaign_segment_name]
     series_types: {}
     hidden_points_if_no: [segment_1, segment_2]
     listen:
-      Cohort | Campaign Name: c_cohort.campaign_name
-      Cohort | Segment Name: c_cohort.segment_name
-      Cohort | Execution Date: c_cohort.execution_date_date
+      Cohort | Campaign Name: cohort.campaign_name
+      Cohort | Segment Name: cohort.segment_name
+      Cohort | Execution Date: cohort.execution_date_date
     row: 38
     col: 16
     width: 4
@@ -842,7 +842,7 @@
     explore: standard_model
     type: single_value
     fields: [c_transactionsummary.total_revenue, c_transactionsummary.transaction_date_year,
-      c_cohort.campaign_segment_name, c_transactionsummary.revenue_per_customer]
+      cohort.campaign_segment_name, c_transactionsummary.revenue_per_customer]
     pivots: [c_transactionsummary.transaction_date_year]
     fill_fields: [c_transactionsummary.transaction_date_year]
     filters:
@@ -866,13 +866,13 @@
     comparison_type: change
     comparison_reverse_colors: false
     show_comparison_label: false
-    hidden_fields: [c_cohort.campaign_segment_name, c_transactionsummary.revenue_per_customer]
+    hidden_fields: [cohort.campaign_segment_name, c_transactionsummary.revenue_per_customer]
     series_types: {}
     hidden_points_if_no: [segment_1, segment_2, segment_3]
     listen:
-      Cohort | Campaign Name: c_cohort.campaign_name
-      Cohort | Segment Name: c_cohort.segment_name
-      Cohort | Execution Date: c_cohort.execution_date_date
+      Cohort | Campaign Name: cohort.campaign_name
+      Cohort | Segment Name: cohort.segment_name
+      Cohort | Execution Date: cohort.execution_date_date
     row: 41
     col: 16
     width: 4
@@ -882,7 +882,7 @@
 
     explore: standard_model
     type: single_value
-    fields: [c_cohort.campaign_segment_name, c_transactionsummary.revenue_per_customer,
+    fields: [cohort.campaign_segment_name, c_transactionsummary.revenue_per_customer,
       c_transactionsummary.transaction_date_year]
     pivots: [c_transactionsummary.transaction_date_year]
     fill_fields: [c_transactionsummary.transaction_date_year]
@@ -922,9 +922,9 @@
     total_color: "#bebada"
     title_hidden: true
     listen:
-      Cohort | Campaign Name: c_cohort.campaign_name
-      Cohort | Segment Name: c_cohort.segment_name
-      Cohort | Execution Date: c_cohort.execution_date_date
+      Cohort | Campaign Name: cohort.campaign_name
+      Cohort | Segment Name: cohort.segment_name
+      Cohort | Execution Date: cohort.execution_date_date
     row: 35
     col: 0
     width: 12
@@ -958,7 +958,7 @@
 
     explore: standard_model
     type: single_value
-    fields: [c_transactionsummary.buyer_count, c_cohort.campaign_segment_name, c_transactionsummary.revenue_per_customer]
+    fields: [c_transactionsummary.buyer_count, cohort.campaign_segment_name, c_transactionsummary.revenue_per_customer]
     sorts: [c_transactionsummary.revenue_per_customer desc]
     limit: 500
     column_limit: 50
@@ -973,13 +973,13 @@
     comparison_type: change
     comparison_reverse_colors: false
     show_comparison_label: false
-    hidden_fields: [c_cohort.campaign_segment_name, c_transactionsummary.revenue_per_customer]
+    hidden_fields: [cohort.campaign_segment_name, c_transactionsummary.revenue_per_customer]
     series_types: {}
     hidden_points_if_no: [segment_1]
     listen:
-      Cohort | Campaign Name: c_cohort.campaign_name
-      Cohort | Segment Name: c_cohort.segment_name
-      Cohort | Execution Date: c_cohort.execution_date_date
+      Cohort | Campaign Name: cohort.campaign_name
+      Cohort | Segment Name: cohort.segment_name
+      Cohort | Execution Date: cohort.execution_date_date
     row: 35
     col: 12
     width: 4
@@ -989,7 +989,7 @@
 
     explore: standard_model
     type: single_value
-    fields: [c_transactionsummary.transaction_date_year, c_cohort.campaign_segment_name,
+    fields: [c_transactionsummary.transaction_date_year, cohort.campaign_segment_name,
       c_transactionsummary.revenue_per_customer]
     pivots: [c_transactionsummary.transaction_date_year]
     fill_fields: [c_transactionsummary.transaction_date_year]
@@ -1029,9 +1029,9 @@
     total_color: "#bebada"
     title_hidden: true
     listen:
-      Cohort | Campaign Name: c_cohort.campaign_name
-      Cohort | Segment Name: c_cohort.segment_name
-      Cohort | Execution Date: c_cohort.execution_date_date
+      Cohort | Campaign Name: cohort.campaign_name
+      Cohort | Segment Name: cohort.segment_name
+      Cohort | Execution Date: cohort.execution_date_date
     row: 41
     col: 0
     width: 12
@@ -1041,7 +1041,7 @@
 
     explore: standard_model
     type: single_value
-    fields: [c_transactionsummary.transaction_date_year, c_cohort.campaign_segment_name,
+    fields: [c_transactionsummary.transaction_date_year, cohort.campaign_segment_name,
       c_transactionsummary.revenue_per_customer]
     pivots: [c_transactionsummary.transaction_date_year]
     fill_fields: [c_transactionsummary.transaction_date_year]
@@ -1081,9 +1081,9 @@
     total_color: "#bebada"
     title_hidden: true
     listen:
-      Cohort | Campaign Name: c_cohort.campaign_name
-      Cohort | Segment Name: c_cohort.segment_name
-      Cohort | Execution Date: c_cohort.execution_date_date
+      Cohort | Campaign Name: cohort.campaign_name
+      Cohort | Segment Name: cohort.segment_name
+      Cohort | Execution Date: cohort.execution_date_date
     row: 38
     col: 0
     width: 12
@@ -1093,7 +1093,7 @@
 
     explore: standard_model
     type: single_value
-    fields: [c_cohort.campaign_segment_name, c_transactionsummary.buyer_count, c_transactionsummary.revenue_per_customer]
+    fields: [cohort.campaign_segment_name, c_transactionsummary.buyer_count, c_transactionsummary.revenue_per_customer]
     sorts: [c_transactionsummary.revenue_per_customer desc]
     limit: 500
     column_limit: 50
@@ -1108,13 +1108,13 @@
     comparison_type: change
     comparison_reverse_colors: false
     show_comparison_label: false
-    hidden_fields: [c_cohort.campaign_segment_name, c_transactionsummary.revenue_per_customer]
+    hidden_fields: [cohort.campaign_segment_name, c_transactionsummary.revenue_per_customer]
     series_types: {}
     hidden_points_if_no: [segment_1, segment_2]
     listen:
-      Cohort | Campaign Name: c_cohort.campaign_name
-      Cohort | Segment Name: c_cohort.segment_name
-      Cohort | Execution Date: c_cohort.execution_date_date
+      Cohort | Campaign Name: cohort.campaign_name
+      Cohort | Segment Name: cohort.segment_name
+      Cohort | Execution Date: cohort.execution_date_date
     row: 38
     col: 12
     width: 4
@@ -1124,7 +1124,7 @@
 
     explore: standard_model
     type: single_value
-    fields: [c_cohort.campaign_segment_name, c_transactionsummary.buyer_count, c_transactionsummary.revenue_per_customer]
+    fields: [cohort.campaign_segment_name, c_transactionsummary.buyer_count, c_transactionsummary.revenue_per_customer]
     sorts: [c_transactionsummary.revenue_per_customer desc]
     limit: 500
     column_limit: 50
@@ -1139,13 +1139,13 @@
     comparison_type: change
     comparison_reverse_colors: false
     show_comparison_label: false
-    hidden_fields: [c_cohort.campaign_segment_name, c_transactionsummary.revenue_per_customer]
+    hidden_fields: [cohort.campaign_segment_name, c_transactionsummary.revenue_per_customer]
     series_types: {}
     hidden_points_if_no: [segment_1, segment_2, segment_3]
     listen:
-      Cohort | Campaign Name: c_cohort.campaign_name
-      Cohort | Segment Name: c_cohort.segment_name
-      Cohort | Execution Date: c_cohort.execution_date_date
+      Cohort | Campaign Name: cohort.campaign_name
+      Cohort | Segment Name: cohort.segment_name
+      Cohort | Execution Date: cohort.execution_date_date
     row: 41
     col: 12
     width: 4
@@ -1164,7 +1164,7 @@
     explore: standard_model
     type: single_value
     fields: [c_transactionsummary.buyer_count, c_customersummary.transaction_count_lifetime,
-      c_cohort.campaign_segment_name, c_transactionsummary.revenue_per_customer]
+      cohort.campaign_segment_name, c_transactionsummary.revenue_per_customer]
     pivots: [c_customersummary.transaction_count_lifetime]
     sorts: [c_customersummary.transaction_count_lifetime 0, c_transactionsummary.revenue_per_customer
         desc 11]
@@ -1185,14 +1185,14 @@
     comparison_type: change
     comparison_reverse_colors: false
     show_comparison_label: false
-    hidden_fields: [c_transactionsummary.buyer_count, c_cohort.campaign_segment_name,
+    hidden_fields: [c_transactionsummary.buyer_count, cohort.campaign_segment_name,
       c_transactionsummary.revenue_per_customer]
     series_types: {}
     hidden_points_if_no: [segment_1]
     listen:
-      Cohort | Campaign Name: c_cohort.campaign_name
-      Cohort | Segment Name: c_cohort.segment_name
-      Cohort | Execution Date: c_cohort.execution_date_date
+      Cohort | Campaign Name: cohort.campaign_name
+      Cohort | Segment Name: cohort.segment_name
+      Cohort | Execution Date: cohort.execution_date_date
     row: 35
     col: 20
     width: 4
@@ -1202,7 +1202,7 @@
 
     explore: standard_model
     type: single_value
-    fields: [c_cohort.campaign_segment_name, c_transactionsummary.buyer_count, c_transactionsummary.revenue_per_customer,
+    fields: [cohort.campaign_segment_name, c_transactionsummary.buyer_count, c_transactionsummary.revenue_per_customer,
       c_customersummary.transaction_count_lifetime]
     pivots: [c_customersummary.transaction_count_lifetime]
     sorts: [c_customersummary.transaction_count_lifetime 0, c_transactionsummary.revenue_per_customer
@@ -1224,14 +1224,14 @@
     comparison_type: change
     comparison_reverse_colors: false
     show_comparison_label: false
-    hidden_fields: [c_transactionsummary.buyer_count, c_cohort.campaign_segment_name,
+    hidden_fields: [c_transactionsummary.buyer_count, cohort.campaign_segment_name,
       c_transactionsummary.revenue_per_customer]
     series_types: {}
     hidden_points_if_no: [segment_1, segment_2]
     listen:
-      Cohort | Campaign Name: c_cohort.campaign_name
-      Cohort | Segment Name: c_cohort.segment_name
-      Cohort | Execution Date: c_cohort.execution_date_date
+      Cohort | Campaign Name: cohort.campaign_name
+      Cohort | Segment Name: cohort.segment_name
+      Cohort | Execution Date: cohort.execution_date_date
     row: 38
     col: 20
     width: 4
@@ -1241,7 +1241,7 @@
 
     explore: standard_model
     type: single_value
-    fields: [c_cohort.campaign_segment_name, c_transactionsummary.buyer_count, c_customersummary.transaction_count_lifetime,
+    fields: [cohort.campaign_segment_name, c_transactionsummary.buyer_count, c_customersummary.transaction_count_lifetime,
       c_transactionsummary.revenue_per_customer]
     pivots: [c_customersummary.transaction_count_lifetime]
     sorts: [c_customersummary.transaction_count_lifetime 0, c_transactionsummary.revenue_per_customer
@@ -1263,14 +1263,14 @@
     comparison_type: change
     comparison_reverse_colors: false
     show_comparison_label: false
-    hidden_fields: [c_transactionsummary.buyer_count, c_cohort.campaign_segment_name,
+    hidden_fields: [c_transactionsummary.buyer_count, cohort.campaign_segment_name,
       c_transactionsummary.revenue_per_customer]
     series_types: {}
     hidden_points_if_no: [segment_1, segment_3]
     listen:
-      Cohort | Campaign Name: c_cohort.campaign_name
-      Cohort | Segment Name: c_cohort.segment_name
-      Cohort | Execution Date: c_cohort.execution_date_date
+      Cohort | Campaign Name: cohort.campaign_name
+      Cohort | Segment Name: cohort.segment_name
+      Cohort | Execution Date: cohort.execution_date_date
     row: 41
     col: 20
     width: 4
@@ -1325,9 +1325,9 @@
     down_color: "#ffed6f"
     total_color: "#bebada"
     listen:
-      Cohort | Campaign Name: c_cohort.campaign_name
-      Cohort | Segment Name: c_cohort.segment_name
-      Cohort | Execution Date: c_cohort.execution_date_date
+      Cohort | Campaign Name: cohort.campaign_name
+      Cohort | Segment Name: cohort.segment_name
+      Cohort | Execution Date: cohort.execution_date_date
     row: 137
     col: 0
     width: 13
@@ -1337,14 +1337,14 @@
 
     explore: standard_model
     type: collapsible_tree
-    fields: [c_cohort.campaign_name, c_cohort.segment_name, c_transactionsummary.buyer_count]
-    sorts: [c_transactionsummary.buyer_count desc, c_cohort.segment_name]
+    fields: [cohort.campaign_name, cohort.segment_name, c_transactionsummary.buyer_count]
+    sorts: [c_transactionsummary.buyer_count desc, cohort.segment_name]
     limit: 500
     column_limit: 50
     series_types: {}
     listen:
-      Cohort | Campaign Name: c_cohort.campaign_name
-      Cohort | Execution Date: c_cohort.execution_date_date
+      Cohort | Campaign Name: cohort.campaign_name
+      Cohort | Execution Date: cohort.execution_date_date
     row: 137
     col: 13
     width: 11
@@ -1355,12 +1355,12 @@
     explore: standard_model
     type: looker_column
     fields: [c_transactionsummary.transaction_date_month, c_transactionsummary.total_revenue,
-      c_cohort.campaign_segment_name]
-    pivots: [c_cohort.campaign_segment_name]
+      cohort.campaign_segment_name]
+    pivots: [cohort.campaign_segment_name]
     fill_fields: [c_transactionsummary.transaction_date_month]
     filters:
       c_transactionsummary.transaction_date_date: 12 months
-    sorts: [c_transactionsummary.transaction_date_month desc, c_cohort.campaign_segment_name]
+    sorts: [c_transactionsummary.transaction_date_month desc, cohort.campaign_segment_name]
     limit: 500
     color_application:
       collection_id: c135b719-9ca1-418a-9ad9-ce7f356b8f18
@@ -1400,9 +1400,9 @@
     show_null_points: true
     interpolation: linear
     listen:
-      Cohort | Campaign Name: c_cohort.campaign_name
-      Cohort | Segment Name: c_cohort.segment_name
-      Cohort | Execution Date: c_cohort.execution_date_date
+      Cohort | Campaign Name: cohort.campaign_name
+      Cohort | Segment Name: cohort.segment_name
+      Cohort | Execution Date: cohort.execution_date_date
     row: 72
     col: 0
     width: 24
@@ -1412,8 +1412,8 @@
 
     explore: standard_model
     type: looker_grid
-    fields: [c_cohort.campaign_name, c_cohort.execution_date_date]
-    sorts: [c_cohort.execution_date_date desc]
+    fields: [cohort.campaign_name, cohort.execution_date_date]
+    sorts: [cohort.execution_date_date desc]
     limit: 500
     show_view_names: true
     show_row_numbers: true
@@ -1428,9 +1428,9 @@
     conditional_formatting_include_nulls: false
     series_types: {}
     listen:
-      Cohort | Campaign Name: c_cohort.campaign_name
-      Cohort | Segment Name: c_cohort.segment_name
-      Cohort | Execution Date: c_cohort.execution_date_date
+      Cohort | Campaign Name: cohort.campaign_name
+      Cohort | Segment Name: cohort.segment_name
+      Cohort | Execution Date: cohort.execution_date_date
     row: 0
     col: 0
     width: 24
@@ -1445,7 +1445,7 @@
 
     explore: standard_model
     listens_to_filters: []
-    field: c_cohort.campaign_name
+    field: cohort.campaign_name
   - name: Cohort | Segment Name
     title: Cohort | Segment Name
     type: field_filter
@@ -1455,7 +1455,7 @@
 
     explore: standard_model
     listens_to_filters: [Cohort | Campaign Name]
-    field: c_cohort.segment_name
+    field: cohort.segment_name
   - name: Cohort | Execution Date
     title: Cohort | Execution Date
     type: field_filter
@@ -1465,4 +1465,4 @@
 
     explore: standard_model
     listens_to_filters: []
-    field: c_cohort.execution_date_date
+    field: cohort.execution_date_date
