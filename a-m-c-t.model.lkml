@@ -4,6 +4,7 @@ include: "//a1lk_project_agilone_base/*.dashboard.lookml"
 include: "//a1lk_project_agilone_base/Attribution/d8__multi_touch_attribution.dashboard"
 include: "//a1lk_project_agilone_base/a1lk_model_agilone_base.model.lkml"
 include: "//a1lk_project_agilone_base/a1lk_model_agilone_base.model.lkml"
+include: "//a1lk_project_agilone_base/a1lk_model_agilone_base.model.lkml"
 connection: "a1lk_cxn_client_lululemon"
 
 explore: +standard_model {
